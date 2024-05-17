@@ -10,5 +10,5 @@ def openFile(filename):
     except FileNotFoundError as e:
         logging.error("{}".format(e))
 
-filename=input("Input a file name: ")
+filename=input("Input a file name : ")
 openFile(filename)
