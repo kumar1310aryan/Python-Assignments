@@ -9,8 +9,8 @@ import os
 application = Flask(__name__)
 app=application
 
-scaler=pickle.load(open(os.path.join(os.path.join("..","Model"),"standardScaler.pkl"),"rb"))
-model = pickle.load(open(os.path.join(os.path.join("..", "Model"), "modelForPrediction.pkl"),'rb'))
+scaler=pickle.load(open("Model/standardScaler.pkl","rb"))
+model = pickle.load(open("Model/modelForPrediction.pkl","rb"))
 
 ## Route for homepage
 
@@ -42,7 +42,7 @@ def predict_datapoint():
         else:
             result ='Non-Diabetic'
             
-        return render_template('single_prediction.html',result=result)
+        return render_template('home.html',result=result)
 
     else:
         return render_template('home.html')
