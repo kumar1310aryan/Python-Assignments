@@ -3,13 +3,14 @@ from flask import Response
 import pickle
 import numpy as np
 import pandas as pd
+import os
 
 
 application = Flask(__name__)
 app=application
 
-scaler=pickle.load(open("Model/standardScalar.pkl", "rb"))
-model = pickle.load(open("Model/modelForPrediction.pkl", "rb"))
+scaler=pickle.load(open(os.path.join(os.path.join("..","Model"),"standardScaler.pkl"),"rb"))
+model = pickle.load(open(os.path.join(os.path.join("..", "Model"), "modelForPrediction.pkl"),'rb'))
 
 ## Route for homepage
 
